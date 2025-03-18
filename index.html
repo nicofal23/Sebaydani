@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Casamiento</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1>¡Nos Casamos!</h1>
+    </header>
+    <main>
+        <div class="logo">
+            <img src="./assets/images/logo.png" alt="Logo de la invitación">
+        </div>
+        <div class="frase">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#f3f4f5" fill-opacity="1"
+                    d="M0,32L30,42.7C60,53,120,75,180,122.7C240,171,300,245,360,266.7C420,288,480,256,540,208C600,160,660,96,720,90.7C780,85,840,139,900,149.3C960,160,1020,128,1080,133.3C1140,139,1200,181,1260,218.7C1320,256,1380,288,1410,304L1440,320L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
+                </path>
+                <h2>“Amar es encontrar en la felicidad de otro, tu propia felicidad”</h2>
+            </svg>
+        </div>
+        <div class="reproductor">
+            <div class="wave-container" id="waveContainer">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <div class="controls">
+                <button onclick="prevSong()">⏮</button>
+                <button class="Botonplay" onclick="togglePlay()">▶️</button>
+                <button onclick="nextSong()">⏭</button>
+            </div>
+        </div>
+        <!-- Asegúrate de que el elemento <audio> esté presente -->
+        <audio id="audio">
+            <source src="./assets/music/every.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        <div class="carrusel">
+            <div class="carrusel-contenedor">
+                <div class="carrusel-item">
+                    <img src="./assets/images/sebadani.jpg" alt="Imagen 1">
+                </div>
+                <div class="carrusel-item">
+                    <img src="./assets/images/sebadanimateo.jpg" alt="Imagen 2">
+                </div>
+            </div>
+        </div>
+        <div class="fiesta-container">
+            <h2>La Fiesta</h2>
+            <div class="cuadrado">
+                
+                <div class="cuadrado-contenido"></div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>Fecha: 25 de Diciembre de 2023</p>
+        <p>Lugar: Iglesia de San Juan, Ciudad</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

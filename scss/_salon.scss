@@ -1,0 +1,60 @@
+/* Estilos del contenedor principal */
+.fiesta-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-image: url('./assets/images/imagen-fiesta.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Efecto de difuminado */
+.fiesta-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(145, 126, 91, 0.7); /* Color #917E5B con opacidad */
+    z-index: 1;
+}
+
+/* Estilos del título */
+.fiesta-container h2 {
+    position: relative;
+    z-index: 2;
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+/* Estilos del cuadrado */
+.cuadrado {
+    position: relative;
+    z-index: 2;
+    width: 300px;
+    height: 300px;
+    border: 5px solid #9F8735; /* Borde del cuadrado */
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+}
+
+/* Estilos del contenido del cuadrado */
+.cuadrado-contenido {
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/images/imagen-fiesta.jpg'); /* Misma imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Difuminado adicional */
+}

@@ -1,0 +1,33 @@
+@import 'variables';
+
+.logo {
+    height: 100vh;
+    background: rgb(227,201,146);
+    background: linear-gradient(0deg, rgba(227,201,146,1) 10%, rgba(238,236,227,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    text-align: center;
+    height: 20rem;
+}
+
+.logo img {
+    height: auto;
+    animation: latido 1.5s infinite;
+}
+
+@keyframes latido {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

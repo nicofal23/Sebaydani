@@ -1,0 +1,26 @@
+// _typography.scss
+
+@import 'variables';
+
+body {
+    font-family: $font-secondary;
+    color: $secondary-color;
+}
+
+h1, h2, h3 {
+    font-family: $font-primary;
+    color: $primary-color;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}

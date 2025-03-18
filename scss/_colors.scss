@@ -1,0 +1,17 @@
+// _colors.scss
+
+@import 'variables';
+
+body {
+    background-color: $background-color;
+}
+
+.header {
+    background-color: $primary-color;
+    color: white;
+}
+
+.footer {
+    background-color: $secondary-color;
+    color: white;
+}
