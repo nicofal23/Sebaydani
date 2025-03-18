@@ -17,3 +17,16 @@
     font-size: 4rem; /* Tamaño del título */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
 }
+
+
+
+/* Media Query para pantallas más pequeñas (hasta 942px) */
+@media (max-width: 942px) {
+    .header {
+        height: 40vh;
+        background-attachment: local; 
+    }
+    h2 {
+        font-size: 2rem !important;
+    }
+}
