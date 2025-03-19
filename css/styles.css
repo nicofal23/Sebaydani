@@ -63,6 +63,9 @@ body {
   h2 {
     font-size: 2rem !important;
   }
+  .logo img {
+    width: 80%;
+  }
 }
 .logo {
   height: 100vh;
@@ -80,7 +83,6 @@ body {
 }
 
 .logo img {
-  width: 100%;
   height: auto;
   animation: latido 1.5s infinite;
 }
@@ -247,24 +249,22 @@ svg {
     flex-direction: column;
   }
 }
-/* Estilos del contenedor principal */
-.fiesta-container {
+/* Estilos del contenedor del salón */
+.salon-container {
   position: relative;
   width: 100%;
   height: 100vh; /* Ocupa toda la altura de la pantalla */
-  background-image: url("./assets/images/imagen-fiesta.jpg"); /* Ruta de la imagen de fondo */
+  background-image: url("../assets/images/lugarcasamiento.jpg"); /* Ruta de la imagen de fondo del salón */
   background-size: cover;
   background-position: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   text-align: center;
   overflow: hidden;
 }
 
 /* Efecto de difuminado */
-.fiesta-container::before {
+.salon-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -275,23 +275,27 @@ svg {
   z-index: 1;
 }
 
-/* Estilos del título */
-.fiesta-container h2 {
+/* Contenedor del contenido (título y cuadrado) */
+.salon-content {
   position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espacio entre el título y el cuadrado */
+}
+
+/* Estilos del título */
+.salon-content h2 {
   font-family: "Great Vibes", cursive;
   font-size: 4rem;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
 }
 
 /* Estilos del cuadrado */
 .cuadrado {
-  position: relative;
-  z-index: 2;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 60%;
   border: 5px solid #9F8735; /* Borde del cuadrado */
   border-radius: 15px;
   overflow: hidden;
@@ -302,10 +306,27 @@ svg {
 .cuadrado-contenido {
   width: 100%;
   height: 100%;
-  background-image: url("./assets/images/imagen-fiesta.jpg"); /* Misma imagen de fondo */
-  background-size: cover;
-  background-position: center;
-  filter: blur(5px); /* Difuminado adicional */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cuadrado-contenido img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra todo el cuadrado */
+}
+
+h3 {
+  position: absolute;
+  margin: 0.9375rem;
+  z-index: 1;
+  font-family: "Great Vibes", cursive;
+  font-size: 4rem;
+  color: #4a4a4a;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */
