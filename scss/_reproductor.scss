@@ -1,3 +1,4 @@
+/* Contenedor del reproductor */
 .reproductor {
     display: flex;
     flex-direction: column;
@@ -6,43 +7,85 @@
     height: 15vh;
     background-color: #f5f1e8;
 }
+
+/* Contenedor de las ondas */
 .wave-container {
     display: flex;
     gap: 5px;
 }
+
+/* Estilos de las ondas */
 .wave {
     width: 5px;
     height: 10px;
     background: #E9DBBB;
     animation: none;
 }
+
+/* Barra de progreso */
 .progress-bar {
     width: 90%;
     height: 1px;
     background: #000;
     margin: 20px 0;
 }
+
+/* Contenedor de los controles */
 .controls {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
+
+/* Estilos generales para los botones */
 .controls button {
-    background: none;
+    background: #a08a5a; /* Fondo dorado */
     border: none;
     cursor: pointer;
     font-size: 24px;
-    color: #a08a5a;
+    color: white; /* Color del ícono */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Botones redondeados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background 0.3s ease, transform 0.2s ease;
 }
-.Botonplay{
-    background: none !important;
+
+/* Efecto hover para los botones */
+.controls button:hover {
+    background: #8a744d; /* Fondo dorado más oscuro */
+    transform: scale(1.1); /* Efecto de escala */
+}
+
+/* Estilo especial para el botón de play */
+.Botonplay {
+    background: #a08a5a !important; /* Fondo dorado */
     border: none !important;
     cursor: pointer !important;
-    font-size: 24px !important;
-    color: #a08a5a !important;
+    font-size: 32px !important; /* Ícono más grande */
+    color: white !important;
+    width: 60px !important; /* Tamaño más grande */
+    height: 60px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    transition: background 0.3s ease, transform 0.2s ease !important;
 }
+
+/* Efecto hover para el botón de play */
+.Botonplay:hover {
+    background: #8a744d !important; /* Fondo dorado más oscuro */
+    transform: scale(1.1) !important; /* Efecto de escala */
+}
+
+/* Animación de las ondas */
 @keyframes wave-animation {
     100% { height: 10px; }
     50% { height: 30px; }
     0% { height: 10px; }
-   
 }

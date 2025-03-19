@@ -1,0 +1,19 @@
+@import 'variables';
+
+.dress-code-container{
+ background-color: $body-color !important;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ align-items: center;
+}
+
+
+p{
+    font-family: $font-secondary;
+}
+
+.dress-code-title {
+    font-size: 3rem;
+    font-family: $font-primary;
+}

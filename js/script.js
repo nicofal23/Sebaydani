@@ -133,3 +133,72 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 };
+
+
+
+
+
+//Emailjs
+// Inicializar EmailJS
+emailjs.init("JDRyrb9Zf1ih345pL"); // Reemplaza con tu User ID de EmailJS
+
+// Funciones para abrir/cerrar modales
+function openConfirmationModal() {
+    document.getElementById("confirmationModal").style.display = "block";
+}
+
+function closeConfirmationModal() {
+    document.getElementById("confirmationModal").style.display = "none";
+}
+
+function closeModal() {
+    document.getElementById("mapsModal").style.display = "none";
+}
+
+// Enviar formulario
+document.getElementById("confirmationForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Obtener el valor seleccionado del radio button
+    const attendance = document.querySelector('input[name="attendance"]:checked');
+    if (!attendance) {
+        alert("Por favor, selecciona si vas a asistir.");
+        return;
+    }
+    const attendanceValue = attendance.value;
+
+    // Obtener el valor del campo de nombre
+    const name = document.getElementById("name").value;
+    if (!name) {
+        alert("Por favor, ingresa tu nombre y apellido.");
+        return;
+    }
+
+    // Crear el mensaje basado en la asistencia
+    const message = `El invitado ${name} ha confirmado: ${attendanceValue}.`;
+
+    // Obtener la hora actual
+    const time = new Date().toLocaleString();
+
+    // Datos que se enviarán
+    const templateParams = {
+        name: name,          // Coincide con {{name}} en el template
+        time: time,          // Coincide con {{time}} en el template
+        message: message,    // Coincide con {{message}} en el template
+    };
+
+    console.log("Datos enviados:", templateParams); // Depuración
+
+    // Enviar correo con EmailJS
+    emailjs.send("service_ut8dawt", "template_wc66a5l", templateParams)
+        .then(
+            function (response) {
+                alert("¡Gracias por confirmar tu asistencia!");
+                closeConfirmationModal();
+            },
+            function (error) {
+                console.error("Error al enviar el formulario:", error); // Depuración
+                alert("Hubo un error al enviar el formulario. Inténtalo de nuevo.");
+            }
+        );
+});

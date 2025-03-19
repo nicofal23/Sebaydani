@@ -1,5 +1,8 @@
 // styles.scss
-
+* {
+    box-sizing: border-box;
+  }
+  
 @import 'variables';
 @import 'typography';
 @import 'colors';
@@ -10,3 +13,5 @@
 @import 'carusel';
 @import 'salon';
 @import 'info';
+@import 'asistenciaBoton';
+@import 'dresscode';

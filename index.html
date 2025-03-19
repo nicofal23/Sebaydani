@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -64,7 +65,7 @@
             </div>
             <div class="controls">
                 <button onclick="prevSong()">⏮</button>
-                <button class="Botonplay" onclick="togglePlay()">▶️</button>
+                <button class="Botonplay" onclick="togglePlay()"><i class="fa-solid fa-play"></i></button>
                 <button onclick="nextSong()">⏭</button>
             </div>
         </div>
@@ -106,7 +107,7 @@
                     </button>
                 </div>
             </div>
-        
+
             <div class="info-section">
                 <div class="divider">
                     <i class="fas fa-calendar"></i> <!-- Ícono de estrella -->
@@ -115,20 +116,65 @@
                 <p>27 de Septiembre de 2025 a las 20:00hs</p>
             </div>
         </div>
-        <!-- Modal con Google Maps -->
-<div id="mapsModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <iframe
-            width="100%"
-            height="450"
-            style="border:0"
-            loading="lazy"
-            allowfullscreen
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.0071178317626!2d-60.68804882524556!3d-32.89798006943055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b65379927c1875%3A0xbc6a89a17ac13f4e!2sEspacios%20De%20La%20Barranca!5e0!3m2!1ses!2sar!4v1742344127235!5m2!1ses!2sar">
-        </iframe>
+        <!-- Div con la onda de fondo y el botón -->
+        <div class="wave-button-container">
+            <div class="wave-background"></div>
+            <div class="button-wrapper">
+                <button class="btn" onclick="openConfirmationModal()">Confirmar Asistencia</button>
+            </div>
+        </div>
+        <!-- Div con el fondo del body y el dress code -->
+    <div class="dress-code-container">
+        <h4 class="dress-code-title">Dress Code</h4>
+        <div class="dress-code-icons">
+            <i class="fas fa-tshirt dress-code-icon"></i> <!-- Icono de vestido -->
+            <i class="fas fa-suitcase dress-code-icon"></i> <!-- Icono de traje -->
+        </div>
+        <p class="dress-code-description">Formal - Elegante</p>
     </div>
-</div>
+
+
+
+
+
+        <!-- Modal con Google Maps -->
+        <div id="mapsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <iframe width="100%" height="450" style="border:0" loading="lazy" allowfullscreen
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.0071178317626!2d-60.68804882524556!3d-32.89798006943055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b65379927c1875%3A0xbc6a89a17ac13f4e!2sEspacios%20De%20La%20Barranca!5e0!3m2!1ses!2sar!4v1742344127235!5m2!1ses!2sar">
+                </iframe>
+            </div>
+        </div>
+
+
+        <!-- Modal de confirmación de asistencia -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeConfirmationModal()">&times;</span>
+                <h4 class="asistencia">Confirmar Asistencia</h4>
+                <form id="confirmationForm">
+                    <label>¿Vas a asistir?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="attendance" value="Sí" required>
+                            <span class="radio-custom"></span>
+                            Sí, ahí estaré
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="attendance" value="No" required>
+                            <span class="radio-custom"></span>
+                            No podré asistir
+                        </label>
+                    </div>
+
+                    <label for="name">Nombre y Apellido</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <p>Fecha: 25 de Diciembre de 2023</p>
