@@ -64,9 +64,9 @@
                 <div id="progress"></div>
             </div>
             <div class="controls">
-                <button onclick="prevSong()">⏮</button>
-                <button class="Botonplay" onclick="togglePlay()"><i class="fa-solid fa-play"></i></button>
-                <button onclick="nextSong()">⏭</button>
+                <button onclick="prevSong()"><i class="fa-solid fa-backward-step"></i></button>
+<button class="Botonplay" onclick="togglePlay()"><i class="fa-solid fa-play"></i></button>
+<button onclick="nextSong()"><i class="fa-solid fa-forward-step"></i></button>
             </div>
         </div>
         <!-- Asegúrate de que el elemento <audio> esté presente -->
@@ -124,15 +124,38 @@
             </div>
         </div>
         <!-- Div con el fondo del body y el dress code -->
-    <div class="dress-code-container">
-        <h4 class="dress-code-title">Dress Code</h4>
-        <div class="dress-code-icons">
-            <i class="fas fa-tshirt dress-code-icon"></i> <!-- Icono de vestido -->
-            <i class="fas fa-suitcase dress-code-icon"></i> <!-- Icono de traje -->
+        <div class="dress-code-container">
+            <img class="imgdeco" loading="lazy" decoding="async" width="200" height="50" src="./assets/images/Deco-1.png" sizes="(max-width: 200px) 100vw, 300px">
+            <h4 class="dress-code-title">Dress Code</h4>
+            <div class="dress-code-icons">
+                <img src="./assets/images/vestido-de-novia.png" alt="Vestido de novia" class="dress-code-icon">
+                <img src="./assets/images/suite.png" alt="Traje de novio" class="dress-code-icon">
+            </div>
+            
         </div>
-        <p class="dress-code-description">Formal - Elegante</p>
-    </div>
+        <div class="formal">
+            <p class="dress-code-description">Formal - Elegante</p>
+        </div>
+        <div class="gift1">
+        <div class="gifts-container">
+            <h4 class="dress-code-title">Regalos</h4>
+            <img class="imgdeco" loading="lazy" decoding="async" width="200" height="50" src="./assets/images/Deco-1.png" sizes="(max-width: 200px) 100vw, 300px">
+            <div class="gifts-icons">
+                <i  class="fa-solid fa-gift gifts-icon imgdeco"></i>
+                
+            </div>
+        </div>
+        <div class="gift-suggestion">
+            <p class="gifts-description">El mejor regalo es que nos acompañes en nuestra gran noche. <br> Pero si deseas hacernos un regalo, podrías colaborar con nuestra luna de miel.</p>
+        </div>
+        <!-- Botón para abrir el modal de cuenta bancaria -->
+<div class="gift-suggestion">
+    <p class="gifts-description">El mejor regalo es que nos acompañes en nuestra gran noche. <br> Pero si deseas hacernos un regalo, podrías colaborar con nuestra luna de miel.</p>
+    <button class="btn" onclick="openBankModal()">Cuenta Bancaria</button>
+</div>
 
+    </div>
+        
 
 
 
@@ -175,6 +198,25 @@
                 </form>
             </div>
         </div>
+        <!-- Modal de cuenta bancaria -->
+<div id="bankModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeBankModal()">&times;</span>
+        <h4>Datos para Transferencia</h4>
+        <div class="bank-details">
+            <div class="bank-info">
+                <label>CBU:</label>
+                <p id="cbu">0000003100096899265912</p>
+                <button class="copy-btn" onclick="copyToClipboard('cbu')">Copiar CBU</button>
+            </div>
+            <div class="bank-info">
+                <label>Alias:</label>
+                <p id="alias">BodaDyS2025</p>
+                <button class="copy-btn" onclick="copyToClipboard('alias')">Copiar Alias</button>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
     <footer class="footer">
         <p>Fecha: 25 de Diciembre de 2023</p>

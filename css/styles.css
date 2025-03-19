@@ -537,6 +537,7 @@ h3 {
 .button-wrapper {
   position: relative;
   z-index: 2;
+  border: 1px solid rgba(208, 140, 92, 0.9450980392);
 }
 
 /* Estilos del botón (usando el mixin proporcionado) */
@@ -544,12 +545,12 @@ button.btn {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
-  border: 0;
+  border: 1px solid black;
   position: relative;
   letter-spacing: 0.15em;
   margin: 0 auto;
   padding: 1rem 2.5rem;
-  background: transparent;
+  background: rgba(208, 141, 92, 0.3019607843) !important;
   outline: none;
   font-size: 28px;
   color: #ececec;
@@ -793,15 +794,265 @@ button.btn:hover::before {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin-top: 1.5625rem;
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif cursive;
 }
 
 .dress-code-title {
-  font-size: 3rem;
+  font-size: 5rem;
   font-family: "Great Vibes", cursive;
+  margin: 13px;
+}
+
+/* Contenedor del dress code */
+.dress-code-container {
+  background-color: #f5f1e8; /* Fondo que coincide con el body */
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #e0d7c3; /* Borde superior para separar visualmente */
+}
+
+/* Título del dress code */
+.dress-code-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 5rem !important;
+  color: #a08a5a; /* Color dorado */
+  margin-bottom: 20px;
+}
+
+/* Contenedor de los iconos */
+.dress-code-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Espacio entre los iconos */
+  margin-bottom: 20px;
+}
+
+/* Estilos para las imágenes */
+.dress-code-icon {
+  width: 80px; /* Tamaño de las imágenes */
+  height: 80px;
+  transition: transform 0.3s ease; /* Transición suave */
+  animation: latido 1s infinite ease-in-out;
+}
+
+/* Efecto hover para las imágenes */
+.dress-code-icon:hover {
+  transform: scale(1.1); /* Escalar ligeramente */
+}
+
+/* Descripción del dress code */
+.dress-code-description {
+  font-family: "Open Sans", sans-serif;
+  color: #333; /* Color de texto oscuro */
+  margin-top: 10px;
+}
+
+.formal {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes latido {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.imgdeco {
+  animation: latido 1s infinite ease-in-out;
+}
+
+/* Contenedor general */
+.gifts-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Imagen decorativa */
+.imgdeco {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Título de la sección */
+.gifts-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Contenedor de los iconos */
+.gifts-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+/* Iconos de regalos */
+.gifts-icon {
+  font-size: 80px;
+  color: #968e75; /* Puedes cambiar el color si lo necesitas */
+}
+
+/* Mensaje de sugerencia de regalos */
+.gift-suggestion {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.gifts-description {
+  font-size: 18px;
+  color: #555;
+  font-style: italic;
+}
+
+.gift1 {
+  background-color: #CABDA1;
+  padding: 4px;
+}
+
+/* Estilos para el botón (usando el mixin proporcionado) */
+.btn {
+  position: relative;
+  letter-spacing: 0.25em;
+  margin: 20px auto;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  outline: none;
+  font-size: 28px;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.btn::after,
+.btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  transform: skewX(30deg);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -2;
+}
+
+.btn::before {
+  background-color: #ffff00; /* Color primario */
+  top: -1rem;
+  left: 0rem;
+}
+
+.btn::after {
+  background-color: #8a19ff; /* Color secundario */
+  top: 1rem;
+  left: 8rem;
+}
+
+.btn:hover::before,
+.btn:hover::after {
+  top: 0;
+  transform: skewx(0deg);
+}
+
+.btn:hover::after {
+  left: 0rem;
+}
+
+.btn:hover::before {
+  left: 8.75rem;
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* Estilos para los detalles bancarios */
+.bank-details {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.bank-info {
+  margin-bottom: 20px;
+}
+
+.bank-info label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.bank-info p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Estilos para los botones de copiar */
+.copy-btn {
+  background-color: #8a19ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+  background-color: #6a00cc;
+}
+
+.btn {
+  margin: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */

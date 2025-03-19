@@ -6,14 +6,84 @@
  justify-content: center;
  flex-direction: column;
  align-items: center;
+ margin-top: 1.5625rem;
 }
 
 
 p{
-    font-family: $font-secondary;
+    font-family: $font-secondary cursive;
 }
 
 .dress-code-title {
-    font-size: 3rem;
+    font-size: 5rem;
     font-family: $font-primary;
+    margin: 13px;
 }
+
+
+/* Contenedor del dress code */
+.dress-code-container {
+    background-color: #f5f1e8; /* Fondo que coincide con el body */
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #e0d7c3; /* Borde superior para separar visualmente */
+}
+
+/* Título del dress code */
+.dress-code-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem !important;
+    color: #a08a5a; /* Color dorado */
+    margin-bottom: 20px;
+}
+
+/* Contenedor de los iconos */
+.dress-code-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espacio entre los iconos */
+    margin-bottom: 20px;
+}
+
+/* Estilos para las imágenes */
+.dress-code-icon {
+    width: 80px; /* Tamaño de las imágenes */
+    height: 80px;
+    transition: transform 0.3s ease; /* Transición suave */
+    animation: latido 1s infinite ease-in-out;
+}
+
+/* Efecto hover para las imágenes */
+.dress-code-icon:hover {
+    transform: scale(1.1); /* Escalar ligeramente */
+}
+
+/* Descripción del dress code */
+.dress-code-description {
+    font-family: 'Open Sans', sans-serif;
+    color: #333; /* Color de texto oscuro */
+    margin-top: 10px;
+}
+
+.formal {
+    display: flex;
+    justify-content: center;
+}
+
+
+@keyframes latido {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .imgdeco {
+    animation: latido 1s infinite ease-in-out;
+  }
+  

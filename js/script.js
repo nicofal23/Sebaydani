@@ -202,3 +202,36 @@ document.getElementById("confirmationForm").addEventListener("submit", function 
             }
         );
 });
+
+
+
+
+
+// Funciones para abrir/cerrar el modal de cuenta bancaria
+function openBankModal() {
+    document.getElementById("bankModal").style.display = "block";
+}
+
+function closeBankModal() {
+    document.getElementById("bankModal").style.display = "none";
+}
+
+// Función para copiar al portapapeles
+function copyToClipboard(elementId) {
+    const text = document.getElementById(elementId).innerText;
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alert("Copiado al portapapeles: " + text);
+        })
+        .catch((error) => {
+            console.error("Error al copiar: ", error);
+        });
+}
+
+// Cerrar el modal si se hace clic fuera del contenido
+window.onclick = function (event) {
+    const modal = document.getElementById("bankModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
