@@ -7,6 +7,7 @@
     <title>Invitación de Casamiento</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -92,6 +93,42 @@
                 </div>
             </div>
         </div>
+        <div class="info-container">
+            <div class="divider">
+                <i class="fa-solid fa-location-dot"></i> <!-- Ícono de estrella -->
+            </div>
+            <div class="info-section">
+                <h4>LUGAR</h4>
+                <p>“Espacios de la barranca” - Uriarte 163</p>
+                <div class="botonllegar">
+                    <button class="btn-maps" onclick="openModal()">
+                        <i class="fas fa-map-marker-alt"></i> COMO LLEGAR
+                    </button>
+                </div>
+            </div>
+        
+            <div class="info-section">
+                <div class="divider">
+                    <i class="fas fa-calendar"></i> <!-- Ícono de estrella -->
+                </div>
+                <h4>DÍA Y HORARIO</h4>
+                <p>27 de Septiembre de 2025 a las 20:00hs</p>
+            </div>
+        </div>
+        <!-- Modal con Google Maps -->
+<div id="mapsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <iframe
+            width="100%"
+            height="450"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.0071178317626!2d-60.68804882524556!3d-32.89798006943055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b65379927c1875%3A0xbc6a89a17ac13f4e!2sEspacios%20De%20La%20Barranca!5e0!3m2!1ses!2sar!4v1742344127235!5m2!1ses!2sar">
+        </iframe>
+    </div>
+</div>
     </main>
     <footer class="footer">
         <p>Fecha: 25 de Diciembre de 2023</p>
