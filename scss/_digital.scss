@@ -1,0 +1,68 @@
+/* Estilos para el footer */
+.footer {
+    background-color: rgba(202, 189, 161, 0.3); /* #CABDA1 con 30% de opacidad */
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid rgba(160, 138, 90, 0.2);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-text {
+    color: #5e4a3a;
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.digitalnest-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+.logo-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.logo-text {
+    color: #5e4a3a;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+    .footer {
+        padding: 12px 0;
+    }
+    
+    .footer-text {
+        font-size: 0.8rem;
+    }
+    
+    .logo-img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .logo-text {
+        font-size: 0.9rem;
+    }
+}

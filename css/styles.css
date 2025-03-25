@@ -1121,6 +1121,116 @@ p {
     margin: 10px auto;
   }
 }
+/* Estilo mejorado para el botón de cuenta bancaria */
+.btn-bank {
+  position: relative;
+  letter-spacing: 0.15em;
+  margin: 25px auto;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  outline: none;
+  font-size: 24px;
+  color: #5e4a3a; /* Color tierra oscuro para mejor contraste */
+  border: none;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1;
+  /* Efecto de borde dorado */
+  /* Fondo animado izquierdo (dorado) */
+  /* Fondo animado derecho (verde) */
+  /* Versión móvil */
+}
+.btn-bank::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #a08a5a; /* Dorado */
+  border-radius: 2px;
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+.btn-bank::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 45%;
+  background-color: #a08a5a; /* Dorado */
+  top: 0;
+  left: -50%;
+  transform: skewX(-15deg);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -2;
+}
+.btn-bank span.bank-bg-right {
+  position: absolute;
+  height: 100%;
+  width: 45%;
+  background-color: #4caf50; /* Verde */
+  top: 0;
+  right: -50%;
+  transform: skewX(-15deg);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -2;
+}
+.btn-bank:hover {
+  color: white;
+}
+.btn-bank:hover::before {
+  border-color: transparent;
+}
+.btn-bank:hover::after {
+  left: 0;
+}
+.btn-bank:hover span.bank-bg-right {
+  right: 0;
+}
+@media (max-width: 592px) {
+  .btn-bank {
+    font-size: 18px;
+    padding: 0.8rem 1.8rem;
+    margin: 15px auto;
+  }
+  .btn-bank::after,
+  .btn-bank span.bank-bg-right {
+    width: 50%;
+  }
+}
+
+/* Estilo mejorado para los botones de copiar */
+.copy-btn {
+  background: linear-gradient(135deg, #a08a5a, #7d6b4f);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.copy-btn:hover {
+  background: linear-gradient(135deg, #7d6b4f, #5e4a3a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+.copy-btn:active {
+  transform: translateY(0);
+}
+
 /* Contenedor general */
 .music-suggestion-container {
   background-color: white;
@@ -1511,6 +1621,136 @@ p {
   max-width: 600px;
   padding: 25px;
   background: #f8f4e9;
+}
+
+/* Estilos para la sección de agradecimiento */
+.agradecimiento-container {
+  background-color: #CABDA1; /* Mismo color que gift1 */
+  padding: 30px 20px;
+  margin: 40px auto 0;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.agradecimiento-content {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  position: relative;
+}
+
+.mensaje-agradecimiento {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5e4a3a;
+  font-style: italic;
+  margin-bottom: 30px;
+  font-family: "Lato", sans-serif;
+}
+
+.firma {
+  margin-top: 20px;
+  position: relative;
+}
+
+.nombres-firma {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.5rem;
+  color: #a08a5a;
+  margin: 0;
+  line-height: 1;
+}
+
+.flor-firma {
+  width: 60px;
+  opacity: 0.8;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -15px;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+  .agradecimiento-container {
+    margin: 30px 15px 0;
+    padding: 20px 15px;
+  }
+  .mensaje-agradecimiento {
+    font-size: 1rem;
+  }
+  .nombres-firma {
+    font-size: 2rem;
+  }
+  .flor-firma {
+    width: 50px;
+  }
+}
+/* Estilos para el footer */
+.footer {
+  background-color: rgba(202, 189, 161, 0.3); /* #CABDA1 con 30% de opacidad */
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 50px;
+  border-top: 1px solid rgba(160, 138, 90, 0.2);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-text {
+  color: #5e4a3a;
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.digitalnest-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.digitalnest-logo:hover {
+  transform: translateY(-2px);
+}
+
+.logo-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.logo-text {
+  color: #5e4a3a;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+  .footer {
+    padding: 12px 0;
+  }
+  .footer-text {
+    font-size: 0.8rem;
+  }
+  .logo-img {
+    width: 20px;
+    height: 20px;
+  }
+  .logo-text {
+    font-size: 0.9rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

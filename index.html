@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- En el head de tu HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -190,7 +193,10 @@
             <div class="gift-suggestion">
                 <p class="gifts-description">El mejor regalo es que nos acompañes en nuestra gran noche. <br> Pero si
                     deseas hacernos un regalo, podrías colaborar con nuestra luna de miel.</p>
-                <button class="btn" onclick="openBankModal()">Cuenta Bancaria</button>
+                    <button class="btn-bank" onclick="openBankModal()">
+                        Cuenta Bancaria
+                        <span class="bank-bg-right"></span>
+                    </button>
             </div>
         </div>
         <div class="music-suggestion-container">
@@ -210,7 +216,19 @@
                 </button>
             </div>
         </div>
-
+        <!-- Agrega esto antes del cierre del </main> o donde desees mostrar el agradecimiento -->
+<div class="agradecimiento-container">
+    <div class="agradecimiento-content">
+        <p class="mensaje-agradecimiento">
+            Gracias por ser parte de este momento tan especial en nuestras vidas. 
+            Cada uno de ustedes ha agregado algo único a nuestra historia y 
+            estamos eternamente agradecidos por su amor y apoyo.
+        </p>
+        <div class="firma">
+            <p class="nombres-firma">Seba y Dani</p>
+        </div>
+    </div>
+</div>
 
 
 
@@ -321,8 +339,15 @@
         </div>
     </main>
     <footer class="footer">
-        <p>Fecha: 25 de Diciembre de 2023</p>
-        <p>Lugar: Iglesia de San Juan, Ciudad</p>
+        <div class="footer-content">
+            <p class="footer-text">Diseñado con ❤️ por</p>
+            <a href="https://www.digitalnest.com.ar" target="_blank" rel="noopener noreferrer" class="digitalnest-logo">
+                <img src="https://i.ibb.co/K6hnKT5/logo.png" 
+                     alt="DigitalNest" 
+                     class="logo-img">
+                <span class="logo-text">DigitalNest</span>
+            </a>
+        </div>
     </footer>
 
     <script src="./js/script.js"></script>
