@@ -87,3 +87,11 @@ p{
     animation: latido 1s infinite ease-in-out;
   }
   
+
+
+  @media (max-width: 425px) {
+    .dress-code-title {
+    font-size: 15px; 
+    text-align: center;
+    margin-bottom: 10px;
+}  }

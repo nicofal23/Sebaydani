@@ -65,8 +65,8 @@
             </div>
             <div class="controls">
                 <button onclick="prevSong()"><i class="fa-solid fa-backward-step"></i></button>
-<button class="Botonplay" onclick="togglePlay()"><i class="fa-solid fa-play"></i></button>
-<button onclick="nextSong()"><i class="fa-solid fa-forward-step"></i></button>
+                <button class="Botonplay" onclick="togglePlay()"><i class="fa-solid fa-play"></i></button>
+                <button onclick="nextSong()"><i class="fa-solid fa-forward-step"></i></button>
             </div>
         </div>
         <!-- Asegúrate de que el elemento <audio> esté presente -->
@@ -123,39 +123,141 @@
                 <button class="btn" onclick="openConfirmationModal()">Confirmar Asistencia</button>
             </div>
         </div>
+
+        <div class="church-container">
+            <h3>La Ceremonia</h3>
+            <div class="church-content">
+                <div class="cuadrado-iglesia">
+                    <div class="cuadrado-contenido">
+                        <img src="./assets/images/iglesia.jpg" alt="Foto de la iglesia">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info-container-iglesia">
+            <div class="divider">
+                <i class="fa-solid fa-church"></i> <!-- Ícono de iglesia -->
+            </div>
+            <div class="info-section">
+                <h4>LUGAR</h4>
+                <p>“Parroquia Inmaculado Corazón de María” - Viamonte 1585</p>
+                <div class="botonllegar">
+                    <button class="btn-maps" onclick="openChurchModal()">
+                        <i class="fas fa-map-marker-alt"></i> CÓMO LLEGAR
+                    </button>
+                </div>
+            </div>
+        
+            <div class="info-section">
+                <div class="divider">
+                    <i class="fas fa-clock"></i> <!-- Ícono de reloj -->
+                </div>
+                <h4>HORARIO</h4>
+                <p>27 de Septiembre de 2025 a las 18:30hs</p>
+            </div>
+            
+            <div class="invitacion-iglesia">
+                <p>"Si deseas acompañarnos en este momento tan especial, 
+                serás bienvenido/a con alegría en nuestra ceremonia religiosa"</p>
+                <i class="fa-solid fa-hands-praying"></i> <!-- Ícono de manos rezando -->
+            </div>
+        </div>
+
         <!-- Div con el fondo del body y el dress code -->
         <div class="dress-code-container">
-            <img class="imgdeco" loading="lazy" decoding="async" width="200" height="50" src="./assets/images/Deco-1.png" sizes="(max-width: 200px) 100vw, 300px">
+            <img class="imgdeco" loading="lazy" decoding="async" width="200" height="50"
+                src="./assets/images/Deco-1.png" sizes="(max-width: 200px) 100vw, 300px">
             <h4 class="dress-code-title">Dress Code</h4>
             <div class="dress-code-icons">
                 <img src="./assets/images/vestido-de-novia.png" alt="Vestido de novia" class="dress-code-icon">
                 <img src="./assets/images/suite.png" alt="Traje de novio" class="dress-code-icon">
             </div>
-            
+
         </div>
         <div class="formal">
             <p class="dress-code-description">Formal - Elegante</p>
         </div>
         <div class="gift1">
-        <div class="gifts-container">
-            <h4 class="dress-code-title">Regalos</h4>
-            <img class="imgdeco" loading="lazy" decoding="async" width="200" height="50" src="./assets/images/Deco-1.png" sizes="(max-width: 200px) 100vw, 300px">
-            <div class="gifts-icons">
-                <i  class="fa-solid fa-gift gifts-icon imgdeco"></i>
-                
+            <div class="gifts-container">
+                <h4 class="dress-code-title">Regalos</h4>
+                <img class="imgdeco" loading="lazy" decoding="async" width="200" height="50"
+                    src="./assets/images/Deco-1.png" sizes="(max-width: 200px) 100vw, 300px">
+                <div class="gifts-icons">
+                    <i class="fa-solid fa-gift gifts-icon imgdeco"></i>
+
+                </div>
+            </div>
+            <div class="gift-suggestion">
+                <p class="gifts-description">El mejor regalo es que nos acompañes en nuestra gran noche. <br> Pero si
+                    deseas hacernos un regalo, podrías colaborar con nuestra luna de miel.</p>
+                <button class="btn" onclick="openBankModal()">Cuenta Bancaria</button>
             </div>
         </div>
-        <div class="gift-suggestion">
-            <p class="gifts-description">El mejor regalo es que nos acompañes en nuestra gran noche. <br> Pero si deseas hacernos un regalo, podrías colaborar con nuestra luna de miel.</p>
+        <div class="music-suggestion-container">
+            <div class="music-container">
+                <h4 class="dress-code-title">Sugerencia Musical</h4>
+                <img class="music-imgdeco" loading="lazy" decoding="async" width="200" height="50"
+                    src="./assets/images/Deco-1.png" sizes="(max-width: 200px) 100vw, 300px">
+                <div class="music-icons">
+                    <i class="fa-solid fa-music music-icon"></i>
+                </div>
+            </div>
+            <div class="song-suggestion">
+                <p class="song-description">¿Qué canción no puede faltar en nuestra boda?<br>¡Sugiérenos tus favoritas!</p>
+                <button class="music-btn" onclick="openSongsModal()">
+                    Sugerir Canción
+                    <span class="background-right"></span>
+                </button>
+            </div>
         </div>
-        <!-- Botón para abrir el modal de cuenta bancaria -->
-<div class="gift-suggestion">
-    <p class="gifts-description">El mejor regalo es que nos acompañes en nuestra gran noche. <br> Pero si deseas hacernos un regalo, podrías colaborar con nuestra luna de miel.</p>
-    <button class="btn" onclick="openBankModal()">Cuenta Bancaria</button>
+
+
+
+
+<!-- Modal para llegar a la iglesia  -->
+        <div id="churchMapsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeChurchModal()">&times;</span>
+                <h4 style="color: #5e4a3a; margin-bottom: 15px;">Ubicación de la Iglesia</h4>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497.6071710733645!2d-60.64991559899219!3d-32.96450642196212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab0ae2a5c44f%3A0x57ada10fdc1b0f9d!2sParroquia%20Inmaculado%20Coraz%C3%B3n%20de%20Mar%C3%ADa!5e0!3m2!1ses!2sar!4v1742863227083!5m2!1ses!2sar" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="map-actions">
+                    <button class="map-btn" onclick="openDirections()">
+                        <i class="fas fa-directions"></i> Abrir en Google Maps
+                    </button>
+                </div>
+            </div>
+        </div>
+
+<!-- Modal para Sugerir Canciones -->
+<div id="songsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSongsModal()">&times;</span>
+        <h4>¡Sugiere tu canción!</h4>
+        <p>¿Qué canción no puede faltar en nuestra boda?</p>
+        
+        <form id="songsForm">
+            <div class="form-group">
+                <label for="songName">Canción:</label>
+                <input type="text" id="songName" name="songName" placeholder="Ej: No Demon - Babasónicos" required>
+            </div>
+            <div class="form-group">
+                <label for="guestName">Tu nombre:</label>
+                <input type="text" id="guestName" name="guestName" placeholder="Ej: María González" required>
+            </div>
+            <button type="submit" class="submit-btn">Enviar Sugerencia</button>
+        </form>
+    </div>
 </div>
 
-    </div>
-        
 
 
 
@@ -199,24 +301,24 @@
             </div>
         </div>
         <!-- Modal de cuenta bancaria -->
-<div id="bankModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeBankModal()">&times;</span>
-        <h4>Datos para Transferencia</h4>
-        <div class="bank-details">
-            <div class="bank-info">
-                <label>CBU:</label>
-                <p id="cbu">0000003100096899265912</p>
-                <button class="copy-btn" onclick="copyToClipboard('cbu')">Copiar CBU</button>
-            </div>
-            <div class="bank-info">
-                <label>Alias:</label>
-                <p id="alias">BodaDyS2025</p>
-                <button class="copy-btn" onclick="copyToClipboard('alias')">Copiar Alias</button>
+        <div id="bankModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeBankModal()">&times;</span>
+                <h4>Datos para Transferencia</h4>
+                <div class="bank-details">
+                    <div class="bank-info">
+                        <label>CBU:</label>
+                        <p id="cbu">0000003100096899265912</p>
+                        <button class="copy-btn" onclick="copyToClipboard('cbu')">Copiar CBU</button>
+                    </div>
+                    <div class="bank-info">
+                        <label>Alias:</label>
+                        <p id="alias">BodaDyS2025</p>
+                        <button class="copy-btn" onclick="copyToClipboard('alias')">Copiar Alias</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
     </main>
     <footer class="footer">
         <p>Fecha: 25 de Diciembre de 2023</p>

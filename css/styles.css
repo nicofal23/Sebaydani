@@ -541,7 +541,7 @@ h3 {
 }
 
 /* Estilos del botón (usando el mixin proporcionado) */
-button.btn {
+button.btn, #songsModal button.submit-btn {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
@@ -556,7 +556,7 @@ button.btn {
   color: #ececec;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
 }
-button.btn::after, button.btn::before {
+button.btn::after, #songsModal button.submit-btn::after, button.btn::before, #songsModal button.submit-btn::before {
   border: 0;
   content: "";
   position: absolute;
@@ -566,39 +566,39 @@ button.btn::after, button.btn::before {
   z-index: -2;
   border-radius: 50%;
 }
-button.btn::before {
+button.btn::before, #songsModal button.submit-btn::before {
   border: 0;
   background-color: #c92918;
   top: -0.75rem;
   left: 0.5rem;
   animation: topAnimation 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
 }
-button.btn::after {
+button.btn::after, #songsModal button.submit-btn::after {
   background-color: #e74c3c;
   top: 3rem;
   left: 13rem;
   animation: bottomAnimation 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
 }
-button.btn:hover {
+button.btn:hover, #songsModal button.submit-btn:hover {
   color: white;
 }
-button.btn:hover::before, button.btn:hover::after {
+button.btn:hover::before, #songsModal button.submit-btn:hover::before, button.btn:hover::after, #songsModal button.submit-btn:hover::after {
   top: 0;
   height: 100%;
   width: 100%;
   border-radius: 0;
   animation: none;
 }
-button.btn:hover::after {
+button.btn:hover::after, #songsModal button.submit-btn:hover::after {
   left: 0rem;
 }
-button.btn:hover::before {
+button.btn:hover::before, #songsModal button.submit-btn:hover::before {
   top: 0.5rem;
   left: 0.35rem;
 }
 
 /* Estilos adicionales para el botón */
-button.btn {
+button.btn, #songsModal button.submit-btn {
   font-family: "Lato", sans-serif;
   font-size: 28px;
   padding: 1rem 2.5rem;
@@ -610,8 +610,9 @@ button.btn {
   position: relative;
 }
 
-button.btn::before,
-button.btn::after {
+button.btn::before, #songsModal button.submit-btn::before,
+button.btn::after,
+#songsModal button.submit-btn::after {
   content: "";
   position: absolute;
   height: 40%;
@@ -621,26 +622,27 @@ button.btn::after {
   border-radius: 50%;
 }
 
-button.btn::before {
+button.btn::before, #songsModal button.submit-btn::before {
   background-color: #c92918;
   top: -0.75rem;
   left: 0.5rem;
   animation: topAnimation 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
 }
 
-button.btn::after {
+button.btn::after, #songsModal button.submit-btn::after {
   background-color: #e74c3c;
   top: 3rem;
   left: 13rem;
   animation: bottomAnimation 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
 }
 
-button.btn:hover {
+button.btn:hover, #songsModal button.submit-btn:hover {
   color: white;
 }
 
-button.btn:hover::before,
-button.btn:hover::after {
+button.btn:hover::before, #songsModal button.submit-btn:hover::before,
+button.btn:hover::after,
+#songsModal button.submit-btn:hover::after {
   top: 0;
   height: 100%;
   width: 100%;
@@ -648,11 +650,11 @@ button.btn:hover::after {
   animation: none;
 }
 
-button.btn:hover::after {
+button.btn:hover::after, #songsModal button.submit-btn:hover::after {
   left: 0rem;
 }
 
-button.btn:hover::before {
+button.btn:hover::before, #songsModal button.submit-btn:hover::before {
   top: 0.5rem;
   left: 0.35rem;
 }
@@ -788,6 +790,54 @@ button.btn:hover::before {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
 }
 
+/* Estilos del modal de canciones */
+#songsModal .modal-content {
+  max-width: 500px;
+  background: linear-gradient(135deg, #f5f1e8, #ffffff);
+  border: 1px solid #d08c5c;
+}
+#songsModal .modal-content h2 {
+  color: #a08a5a;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+#songsModal .modal-content p {
+  color: #555;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+#songsModal .form-group {
+  margin-bottom: 20px;
+}
+#songsModal .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+}
+#songsModal .form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d08c5c;
+  border-radius: 5px;
+  background: rgba(208, 140, 92, 0.1);
+  font-family: "Lato", sans-serif;
+}
+#songsModal .form-group input:focus {
+  outline: none;
+  border-color: #a08a5a;
+}
+#songsModal .submit-btn {
+  width: 100%;
+  background-color: #a08a5a !important;
+  color: white !important;
+  border: none !important;
+}
+#songsModal .submit-btn:hover {
+  background-color: #7f6d2b !important;
+}
+
 .dress-code-container {
   background-color: #A39565 !important;
   display: flex;
@@ -871,6 +921,13 @@ p {
   animation: latido 1s infinite ease-in-out;
 }
 
+@media (max-width: 425px) {
+  .dress-code-title {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
 /* Contenedor general */
 .gifts-container {
   text-align: center;
@@ -923,7 +980,7 @@ p {
 }
 
 /* Estilos para el botón (usando el mixin proporcionado) */
-.btn {
+.btn, #songsModal .submit-btn {
   position: relative;
   letter-spacing: 0.25em;
   margin: 20px auto;
@@ -939,8 +996,9 @@ p {
   font-weight: 700;
 }
 
-.btn::after,
-.btn::before {
+.btn::after, #songsModal .submit-btn::after,
+.btn::before,
+#songsModal .submit-btn::before {
   content: "";
   position: absolute;
   height: 100%;
@@ -950,29 +1008,30 @@ p {
   z-index: -2;
 }
 
-.btn::before {
+.btn::before, #songsModal .submit-btn::before {
   background-color: #ffff00; /* Color primario */
   top: -1rem;
   left: 0rem;
 }
 
-.btn::after {
+.btn::after, #songsModal .submit-btn::after {
   background-color: #8a19ff; /* Color secundario */
   top: 1rem;
   left: 8rem;
 }
 
-.btn:hover::before,
-.btn:hover::after {
+.btn:hover::before, #songsModal .submit-btn:hover::before,
+.btn:hover::after,
+#songsModal .submit-btn:hover::after {
   top: 0;
   transform: skewx(0deg);
 }
 
-.btn:hover::after {
+.btn:hover::after, #songsModal .submit-btn:hover::after {
   left: 0rem;
 }
 
-.btn:hover::before {
+.btn:hover::before, #songsModal .submit-btn:hover::before {
   left: 8.75rem;
 }
 
@@ -1051,8 +1110,407 @@ p {
   background-color: #6a00cc;
 }
 
-.btn {
+.btn, #songsModal .submit-btn {
   margin: 20px;
+}
+
+@media (max-width: 592px) {
+  .btn, #songsModal .submit-btn {
+    font-size: 16px !important;
+    padding: 0.75rem 1.5rem;
+    margin: 10px auto;
+  }
+}
+/* Contenedor general */
+.music-suggestion-container {
+  background-color: white;
+  padding: 4px;
+  margin-top: 20px;
+}
+
+.music-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Imagen decorativa */
+.music-imgdeco {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Título de la sección */
+.music-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Contenedor de los iconos */
+.music-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+/* Icono de música */
+.music-icon {
+  font-size: 80px;
+  color: #8a19ff; /* Color morado para el tema musical */
+}
+
+/* Mensaje de sugerencia de canciones */
+.song-suggestion {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.song-description {
+  font-size: 18px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Estilos para el botón de música */
+.music-btn {
+  position: relative;
+  letter-spacing: 0.25em;
+  margin: 20px auto;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  outline: none;
+  font-size: 28px;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.music-btn::after,
+.music-btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  transform: skewX(30deg);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -2;
+}
+
+.music-btn::before {
+  background-color: #ff3366; /* Color rosa */
+  top: -1rem;
+  left: 0rem;
+}
+
+.music-btn::after {
+  background-color: #8a19ff; /* Color morado */
+  top: 1rem;
+  left: 8rem;
+}
+
+.music-btn:hover::before,
+.music-btn:hover::after {
+  top: 0;
+  transform: skewx(0deg);
+}
+
+.music-btn:hover::after {
+  left: 0rem;
+}
+
+.music-btn:hover::before {
+  left: 8.75rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 592px) {
+  .music-btn {
+    font-size: 16px !important;
+    padding: 0.75rem 1.5rem;
+    margin: 10px auto;
+  }
+  .music-icon {
+    font-size: 60px;
+  }
+  .music-title {
+    font-size: 20px;
+  }
+  .song-description {
+    font-size: 16px;
+  }
+}
+.music-btn {
+  position: relative;
+  letter-spacing: 0.15em;
+  margin: 25px auto;
+  padding: 1rem 2.8rem;
+  background: transparent;
+  outline: none;
+  font-size: 24px;
+  color: #5e4a3a; /* Color tierra oscuro para contraste */
+  border: none;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1;
+  /* Efecto de borde dorado */
+  /* Fondo animado izquierdo (rosa suave) */
+  /* Fondo animado derecho (dorado) */
+  /* Versión móvil */
+}
+.music-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #a08a5a; /* Dorado */
+  border-radius: 2px;
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+.music-btn::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 45%;
+  background-color: #f5d3d9; /* Rosa claro */
+  top: 0;
+  left: -50%;
+  transform: skewX(-15deg);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -2;
+}
+.music-btn span.background-right {
+  position: absolute;
+  height: 100%;
+  width: 45%;
+  background-color: #a08a5a; /* Dorado */
+  top: 0;
+  right: -50%;
+  transform: skewX(-15deg);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -2;
+}
+.music-btn:hover {
+  color: white;
+}
+.music-btn:hover::before {
+  border-color: transparent;
+}
+.music-btn:hover::after {
+  left: 0;
+}
+.music-btn:hover span.background-right {
+  right: 0;
+}
+@media (max-width: 592px) {
+  .music-btn {
+    font-size: 18px;
+    padding: 0.8rem 1.8rem;
+    margin: 15px auto;
+  }
+  .music-btn::after,
+  .music-btn span.background-right {
+    width: 50%;
+  }
+}
+
+.music-icon {
+  font-size: 80px;
+  color: #e74c3c; /* Rojo romántico */
+  position: relative;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+  text-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+  /* Versión móvil */
+}
+@media (max-width: 592px) {
+  .music-icon {
+    font-size: 60px;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    color: #e74c3c;
+  }
+  25% {
+    transform: scale(1.1);
+    color: #ff6b6b;
+  }
+  35% {
+    transform: scale(1);
+    color: #e74c3c;
+  }
+  45% {
+    transform: scale(1.2);
+    color: #ff5252;
+  }
+  55% {
+    transform: scale(1);
+    color: #e74c3c;
+  }
+  100% {
+    transform: scale(1);
+    color: #e74c3c;
+  }
+}
+/* Efecto adicional de pulso al hacer hover */
+.music-icon:hover {
+  animation: heartbeat 0.8s ease-in-out infinite both;
+}
+
+/* Estilos del contenedor de la iglesia */
+.church-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/images/iglesia.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Efecto de difuminado para iglesia (más claro) */
+.church-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(210, 195, 160, 0.6); /* Color más claro para iglesia */
+  z-index: 1;
+}
+
+/* Contenedor del contenido */
+.church-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Cuadrado para iglesia (estilo más clásico) */
+.cuadrado-iglesia {
+  width: 100%;
+  height: 60%;
+  border: 5px solid #7d6b4f; /* Borde más oscuro */
+  border-radius: 5px; /* Menos redondeado que el salón */
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de información de iglesia */
+.info-container-iglesia {
+  background-color: #f8f4e9; /* Fondo más claro */
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* Estilo especial para la invitación */
+.invitacion-iglesia {
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  font-style: italic;
+  color: #5e4a3a;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  border-top: 1px dashed #a08a5a;
+  border-bottom: 1px dashed #a08a5a;
+}
+.invitacion-iglesia i {
+  display: block;
+  margin-top: 15px;
+  font-size: 2rem;
+  color: #a08a5a;
+}
+
+/* Ajustes para los íconos de iglesia */
+.fa-church, .fa-hands-praying {
+  color: #7d6b4f;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Botón mapa para iglesia */
+.btn-maps {
+  background-color: #7d6b4f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  transition: all 0.3s ease;
+}
+.btn-maps:hover {
+  background-color: #5e4a3a;
+}
+.btn-maps i {
+  margin-right: 8px;
+}
+
+/* Estilos para el contenedor del mapa */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Relación 16:9 */
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2px solid #a08a5a;
+  margin-bottom: 15px;
+}
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Botones del mapa */
+.map-btn {
+  background-color: #a08a5a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+.map-btn:hover {
+  background-color: #7d6b4f;
+}
+.map-btn i {
+  margin-right: 8px;
+}
+
+/* Ajustes para el modal de la iglesia */
+#churchMapsModal .modal-content {
+  max-width: 600px;
+  padding: 25px;
+  background: #f8f4e9;
 }
 
 /*# sourceMappingURL=styles.css.map */

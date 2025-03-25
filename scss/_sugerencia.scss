@@ -1,0 +1,260 @@
+/* Contenedor general */
+.music-suggestion-container {
+    background-color: white;
+    padding: 4px;
+    margin-top: 20px;
+}
+
+.music-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Imagen decorativa */
+.music-imgdeco {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Título de la sección */
+.music-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Contenedor de los iconos */
+.music-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* Icono de música */
+.music-icon {
+    font-size: 80px;
+    color: #8a19ff; /* Color morado para el tema musical */
+}
+  
+/* Mensaje de sugerencia de canciones */
+.song-suggestion {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.song-description {
+    font-size: 18px;
+    color: #555;
+    font-style: italic;
+}
+
+/* Estilos para el botón de música */
+.music-btn {
+    position: relative;
+    letter-spacing: 0.25em;
+    margin: 20px auto;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    outline: none;
+    font-size: 28px;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.music-btn::after,
+.music-btn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    transform: skewX(30deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -2;
+}
+
+.music-btn::before {
+    background-color: #ff3366; /* Color rosa */
+    top: -1rem;
+    left: 0rem;
+}
+
+.music-btn::after {
+    background-color: #8a19ff; /* Color morado */
+    top: 1rem;
+    left: 8rem;
+}
+
+.music-btn:hover::before,
+.music-btn:hover::after {
+    top: 0;
+    transform: skewx(0deg);
+}
+
+.music-btn:hover::after {
+    left: 0rem;
+}
+
+.music-btn:hover::before {
+    left: 8.75rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 592px) {
+    .music-btn {
+        font-size: 16px !important;
+        padding: 0.75rem 1.5rem;
+        margin: 10px auto;
+    }
+    
+    .music-icon {
+        font-size: 60px;
+    }
+    
+    .music-title {
+        font-size: 20px;
+    }
+    
+    .song-description {
+        font-size: 16px;
+    }
+}
+
+
+.music-btn {
+    position: relative;
+    letter-spacing: 0.15em;
+    margin: 25px auto;
+    padding: 1rem 2.8rem;
+    background: transparent;
+    outline: none;
+    font-size: 24px;
+    color: #5e4a3a; /* Color tierra oscuro para contraste */
+    border: none;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1;
+    
+    /* Efecto de borde dorado */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid #a08a5a; /* Dorado */
+        border-radius: 2px;
+        z-index: -1;
+        transition: all 0.5s ease;
+    }
+
+    /* Fondo animado izquierdo (rosa suave) */
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 45%;
+        background-color: #f5d3d9; /* Rosa claro */
+        top: 0;
+        left: -50%;
+        transform: skewX(-15deg);
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: -2;
+    }
+
+    /* Fondo animado derecho (dorado) */
+    span.background-right {
+        position: absolute;
+        height: 100%;
+        width: 45%;
+        background-color: #a08a5a; /* Dorado */
+        top: 0;
+        right: -50%;
+        transform: skewX(-15deg);
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: -2;
+    }
+
+    &:hover {
+        color: white;
+        
+        &::before {
+            border-color: transparent;
+        }
+        
+        &::after {
+            left: 0;
+        }
+        
+        span.background-right {
+            right: 0;
+        }
+    }
+
+    /* Versión móvil */
+    @media (max-width: 592px) {
+        font-size: 18px;
+        padding: 0.8rem 1.8rem;
+        margin: 15px auto;
+        
+        &::after,
+        span.background-right {
+            width: 50%;
+        }
+    }
+}
+
+.music-icon {
+    font-size: 80px;
+    color: #e74c3c; /* Rojo romántico */
+    position: relative;
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    text-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+    
+    /* Versión móvil */
+    @media (max-width: 592px) {
+        font-size: 60px;
+    }
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+        color: #e74c3c;
+    }
+    25% {
+        transform: scale(1.1);
+        color: #ff6b6b;
+    }
+    35% {
+        transform: scale(1);
+        color: #e74c3c;
+    }
+    45% {
+        transform: scale(1.2);
+        color: #ff5252;
+    }
+    55% {
+        transform: scale(1);
+        color: #e74c3c;
+    }
+    100% {
+        transform: scale(1);
+        color: #e74c3c;
+    }
+}
+
+/* Efecto adicional de pulso al hacer hover */
+.music-icon:hover {
+    animation: heartbeat 0.8s ease-in-out infinite both;
+}

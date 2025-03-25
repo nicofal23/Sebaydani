@@ -235,3 +235,78 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 };
+
+//sugerir regalo 
+// Funciones para abrir/cerrar modal
+function openSongsModal() {
+    document.getElementById("songsModal").style.display = "block";
+}
+
+function closeSongsModal() {
+    document.getElementById("songsModal").style.display = "none";
+}
+
+// Enviar sugerencia de canción
+document.getElementById("songsForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const songName = document.getElementById("songName").value;
+    const guestName = document.getElementById("guestName").value;
+    
+    // Validación simple
+    if(!songName || !guestName) {
+        alert("Por favor completa todos los campos");
+        return;
+    }
+    
+    // Configuración para EmailJS
+    const templateParams = {
+        song_name: songName,
+        guest_name: guestName,
+        message: `${guestName} sugirió la canción: ${songName}`
+    };
+    
+    // Enviar email (asegúrate de tener inicializado EmailJS)
+    emailjs.send("service_ut8dawt", "template_ecr86a4", templateParams)
+        .then(function() {
+            alert("¡Gracias por tu sugerencia! La canción fue enviada.");
+            closeSongsModal();
+            document.getElementById("songsForm").reset();
+        }, function(error) {
+            console.error("Error al enviar:", error);
+            alert("Hubo un error al enviar tu sugerencia. Intenta nuevamente.");
+        });
+});
+
+// Cerrar modal al hacer clic fuera
+window.addEventListener('click', function(event) {
+    if (event.target === document.getElementById('songsModal')) {
+        closeSongsModal();
+    }
+});
+
+
+
+
+//modal iglesia 
+
+// Funciones para abrir/cerrar el modal de la iglesia
+function openChurchModal() {
+    document.getElementById("churchMapsModal").style.display = "block";
+}
+
+function closeChurchModal() {
+    document.getElementById("churchMapsModal").style.display = "none";
+}
+
+// Función para abrir en Google Maps app
+function openDirections() {
+    window.open("https://www.google.com/maps/dir/?api=1&destination=Parroquia+Inmaculado+Corazón+de+María&destination_place_id=YOUR_PLACE_ID");
+}
+
+// Cerrar modal al hacer clic fuera
+window.onclick = function(event) {
+    if (event.target == document.getElementById('churchMapsModal')) {
+        closeChurchModal();
+    }
+}

@@ -1,0 +1,149 @@
+/* Estilos del contenedor de la iglesia */
+.church-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../assets/images/iglesia.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Efecto de difuminado para iglesia (más claro) */
+.church-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(210, 195, 160, 0.6); /* Color más claro para iglesia */
+    z-index: 1;
+}
+
+/* Contenedor del contenido */
+.church-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Cuadrado para iglesia (estilo más clásico) */
+.cuadrado-iglesia {
+    width: 100%;
+    height: 60%;
+    border: 5px solid #7d6b4f; /* Borde más oscuro */
+    border-radius: 5px; /* Menos redondeado que el salón */
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de información de iglesia */
+.info-container-iglesia {
+    background-color: #f8f4e9; /* Fondo más claro */
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* Estilo especial para la invitación */
+.invitacion-iglesia {
+    margin: 30px auto;
+    max-width: 500px;
+    padding: 20px;
+    font-style: italic;
+    color: #5e4a3a;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    border-top: 1px dashed #a08a5a;
+    border-bottom: 1px dashed #a08a5a;
+    
+    i {
+        display: block;
+        margin-top: 15px;
+        font-size: 2rem;
+        color: #a08a5a;
+    }
+}
+
+/* Ajustes para los íconos de iglesia */
+.fa-church, .fa-hands-praying {
+    color: #7d6b4f;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Botón mapa para iglesia */
+.btn-maps {
+    background-color: #7d6b4f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background-color: #5e4a3a;
+    }
+    
+    i {
+        margin-right: 8px;
+    }
+}
+
+
+/* Estilos para el contenedor del mapa */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Relación 16:9 */
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid #a08a5a;
+    margin-bottom: 15px;
+    
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Botones del mapa */
+.map-btn {
+    background-color: #a08a5a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    
+    &:hover {
+        background-color: #7d6b4f;
+    }
+    
+    i {
+        margin-right: 8px;
+    }
+}
+
+/* Ajustes para el modal de la iglesia */
+#churchMapsModal .modal-content {
+    max-width: 600px;
+    padding: 25px;
+    background: #f8f4e9;
+}
